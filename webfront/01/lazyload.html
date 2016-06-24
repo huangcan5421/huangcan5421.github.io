@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>imgLazyload+arttemplate+imgBox</title>
+	<link rel="stylesheet" type="text/css" href="css/imgbox.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<style type="text/css">
+		.imgList li{
+			float:left;
+			height:400px;
+			width:300px;
+			margin-left:50px;
+			list-style-type: none;
+			margin-bottom:20px;
+			margin-top:20px;
+			position:relative;
+			box-shadow:0px 0px 2px gray;
+			border-radius:4px;
+		}
+		.loading{
+			background-image: url(imgs/heart.svg);
+			position:absolute;
+			height:400px;
+			width:300px;
+			background-repeat:no-repeat;
+			background-position:50% 50%;
+		}
+
+		.imgList li img{
+			width:100%;
+			height:100%;
+			border-radius:4px;
+	</style>
+
+	
+
+</head>
+<body>
+	<div class="row main">
+		<div class="box">
+			<ul class="imgList">
+				<li>
+					<span class="loading"></span>
+					<a title="" class="openCheak" href="imgs/IMG_0735.JPG">
+					<img src="" data-url="imgs/IMG_0735.JPG">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.imgbox.js"></script>
+<script src="js/arttemplate.js"></script>
+<script type="text/html" id="template">
+	<!--存模板-->
+            {{each id as value i}}
+            <li>
+            <span class="loading"></span>
+            <a title="this is my pic" class="openCheak" href="{{img[i]}}">
+            	<img src="" data-url="{{img[i]}}">
+            </a>
+            </li>
+            {{/each}}
+    <!--存模板-->
+</script>
+<script>
+   $(document).ready(function() {
+			$(".openCheak").imgbox({
+				'speedIn'		: 0,
+				'speedOut'		: 0,
+				'alignment'		: 'center',
+				'overlayShow'	: true,
+				'allowMultiple'	: false,
+				'autoScale': true,
+				'slideshow': false,
+				'theme': 'light'
+			});
+		});
+</script>
+<script type="text/javascript">
+
+	var imgList=$('.imgList');
+
+	//模拟后台数据
+	 var data = {
+        id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,18,19,20,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        img: ["imgs/IMG_0724.JPG","imgs/IMG_0709.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG","imgs/IMG_0724.JPG","imgs/IMG_0709.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG","imgs/IMG_0724.JPG","imgs/IMG_0709.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG","imgs/IMG_0724.JPG","imgs/IMG_0709.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG","imgs/IMG_0724.JPG","imgs/IMG_0709.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG","imgs/IMG_0724.JPG","imgs/IMG_0709.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG","imgs/IMG_0724.JPG","imgs/IMG_0709.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG","imgs/IMG_0724.JPG","imgs/IMG_0709.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG","imgs/IMG_0724.JPG","imgs/IMG_0709.JPG","imgs/IMG_0734.JPG","imgs/IMG_0735.JPG"],
+    };
+    
+    //填充模板
+    var html = template('template', data);
+    imgList.append(html);
+
+
+	cheakEle()
+	$(window).scroll(function (argument) {
+		cheakEle()
+		// body...
+	})
+
+	//检查是否加载
+	function cheakEle() {
+		$('.imgList li').each(function (i) {
+			var _this=$(this)
+			if(_this.attr('loaded')){
+				return
+			}
+			else{
+				if(isShow(_this)){
+					setTimeout(function (argument) {
+					_this.find('.loading').addClass('hidden')
+					_this.find('img').attr('src',_this.find('img').data('url'))
+
+					_this.attr('loaded',true)
+					},2000)
+				}
+			}
+		})
+	}
+
+	//判断是否滑动到到本元素了
+	function isShow(ele) {
+				var iscrollH = $(document).scrollTop();
+				var iwinH = $(window).height();
+				var itH = ele.offset().top;
+				if (itH < iwinH + iscrollH) {
+					return true;
+				}
+				return false;
+			}
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "微软雅黑", "Helvetica Neue", Arial, "Microsoft Yahei", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -webkit-outline: none;
+  outline: none;
+  border: 0 none;
+}
+body{
+  height: 0;
+}
+
+.hidden {
+  display: none;
+}
+.red {
+  color: #e60000;
+}
+.gray {
+  color: #999;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.clear {
+  clear: both;
+  *zoom: 1;
+}
+.clear:after {
+  display: block;
+  content: "clear";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.mask {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.center {
+  text-align: center;
+}
+.blue {
+  color: #0096d6;
+  font-size: 14px;
+}
+.row {
+  margin: 0 auto;
+  width: 1136px;
+  padding: 0 8px;
+  position: relative;
+  clear: both;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+html {
+  font-size: 16px;
+  width: 100%;
+  overflow-x: hidden;
+  color: #222;
+}
