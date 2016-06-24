@@ -11,6 +11,9 @@
 
 ##  附上曾经写的项目吧（非开源仅供浏览） ##
 
- 每获：http://www.1meihuo.com/（当然有每获app有兴趣的自行下载吧）
+>  每获：http://www.1meihuo.com/
 
- 中富金石：http://www.zx017.com/
+（当然有每获APP有兴趣的自行下载吧）
+
+> 中富金石：http://www.zx017.com/
+ 
