@@ -4,7 +4,9 @@
 
 ## 前端板块小练习目录： ##
 
-- 01 imgLazyLoad+arttemplate+imgbox
+- 01 imgLazyLoad+arttemplate+imgbox+duoshuo
+> http://t.cn/R5YRrSX
+
 - 02 ...
 
 
