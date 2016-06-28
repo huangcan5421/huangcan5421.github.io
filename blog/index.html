@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>my blog</title>
+	<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/blog.css">
+	<style type="text/css">
+		
+
+	</style>
+</head>
+<script type="text/javascript">
+
+</script>
+<body>
+	<header class="header shadow">
+		<div class="head">
+			<div class="photoContent">
+				<img class="photo" src="imgs/01.jpg">
+			</div>
+			<div class="center">
+				<h1 class="name" id="id1">Hoshine的博客</h1>
+				<h2 class="englishName">Hoshine's blog</h2>
+			</div>
+			<div>
+				<ul class="incoList">
+					<li>
+						<a href="huangcan5421.github.io/blog/index.html">
+							<i class="iconfont">&#xe602;</i>
+						</a>
+					</li>
+					<li>
+						<a href="huangcan5421.github.io/blog/message.html">
+							<i class="iconfont">&#xe600;</i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="iconfont">&#xe604;</i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="iconfont">&#xe606;</i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="iconfont">&#xe605;</i>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="leftRow">
+				<p class="introduce">随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍</p>
+			</div>
+			<div class="leftRow center">
+				<a href="#" class="button shadow">
+				<i class="iconfont">&#xe602; </i>预留按钮</a>
+			</div>
+		</div>
+	</header>
+	<div class="main">
+
+	</div>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/arttemplate.js"></script>
+<script type="text/html" id="template">
+	<!--存模板-->
+            {{each data as value i}}
+            <article class="article">
+			<h3 class="hd">{{value.title}}</h3>
+			<div class="bd">
+			<div class="leftContent">
+				<p>{{value.content}}</p>
+				</div>
+				<div class="articleImgContent">
+					<div class="articleImg" style="background-image:url({{value.imgUrl}})"></div>
+
+				</div>
+				<div class="clear tags"><a href="{{value.href}}">查看详情</a></div>
+			</div>
+		</article>
+            {{/each}}
+    <!--存模板-->
+</script>
+<script type="text/javascript">
+
+	var data={
+		"data":[
+		{"id":1,
+		"title":"重归极简：个人博客开发1",
+		"content":"极简才是美极简才是美极简是美极简才是美极简才是美极简才是美极简!才是美极简才是美极简才是美极简才是美极简才是美极简才是美简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美",
+		"imgUrl":"imgs/01.jpg",
+		"href":"imgs/01.jpg"
+		},
+			{"id":1,
+		"title":"重归极简：个人博客开发2",
+		"content":"极简才是美极简才是美极简是美极简才是美极简才是美极简才是美极简!才是美极简才是美极简才是美极简才是美极简才是美极简才是美简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美",
+		"imgUrl":"imgs/01.jpg",
+		"href":"imgs/01.jpg"
+		},
+			{"id":1,
+		"title":"重归极简：个人博客开发3",
+		"content":"极简才是美极简才是美极简是美极简才是美极简才是美极简才是美极简!才是美极简才是美极简才是美极简才是美极简才是美极简才是美简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美",
+		"imgUrl":"imgs/01.jpg",
+		"href":"imgs/01.jpg"
+		},
+			{"id":1,
+		"title":"重归极简：个人博客开发4",
+		"content":"极简才是美极简才是美极简是美极简才是美极简才是美极简才是美极简!才是美极简才是美极简才是美极简才是美极简才是美极简才是美简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美极简才是美",
+		"imgUrl":"imgs/01.jpg",
+		"href":"imgs/01.jpg"
+		},
+		]
+	}
+	 var html = template('template', data);
+    $('.main').append(html);
+	$(window).scroll(function (argument) {
+		var h2=document.body.scrollTop
+		var h=document.body.scrollHeight 
+		var positionY=h2/h*500
+		$('.header').css('background-position-y',-positionY)
+	})
+</script>
+</html>

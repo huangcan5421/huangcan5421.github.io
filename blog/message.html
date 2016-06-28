@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>my blog</title>
+	<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<style type="text/css">
+		.header{
+			position:fixed;
+			top:0;
+			width:33.3%;
+			height:100%;
+			background:url('imgs/02.jpg');
+			-webkit-background-size: auto,auto 970px;
+			background-size: auto,auto 970px;
+			transition:all .1s;
+		}
+		.header *{
+			color:rgba(255, 255, 255, 0.7);
+		}
+		.main{
+			margin-left:33.3%;
+			background: url('imgs/bg.png');
+			padding:4em;
+			width:calc(100% - 33.3%);
+			max-width:66.6%;
+			box-sizing:border-box;
+			--webkit-box-sizing: border-box;
+		}
+		.head{
+			width:100%;
+			height:100%;
+			background:rgba(0, 0, 0, 0.5);
+			opacity:1;
+		}
+		.photo{
+			width:80px;
+			height:80px;
+			border-radius:40px;
+			background-image:url('imgs/01.jpg');
+			background-size:100%;
+			margin: 50px auto 20px auto;
+			box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0px 2px 20px 3px rgba(0, 0, 0, 0.25);
+		}
+		.photoContent{
+			text-align:center;
+		}
+		.shadow{
+			box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.4), 0px 2px 20px 3px rgba(0, 0, 0, 0.1);
+		}
+		.name{
+			font-size:18px ;
+			font-weight: lighter;
+			letter-spacing:1px;
+		}
+		.englishName{
+			font-size:16px ;
+			font-weight: lighter;
+			font-family:IosevkaWEB;
+		}
+		.incoList{
+			width:190px;
+			margin-top:20px;
+			list-style: none;
+			font-size:14px;
+			text-align:center;
+			margin-left:calc(50% - 95px);
+		}
+		.incoList li{
+			width:28px;
+			height:28px;
+			border-radius:28px;
+			line-height:28px;
+			border: 1px solid rgba(255,255,255,0.6);
+			text-align:center;
+			float:left;
+			margin: 0 4px;
+			box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.4), 0px 1px 10px 2px rgba(0, 0, 0, 0.2);
+		}
+		.leftRow{
+			padding:4em 4em 1em 4em;
+		}
+		.button{
+			padding:8px;
+			border: 1px solid rgba(255,255,255,0.6);
+			border-radius:6px;
+			font-size:12px;
+		}
+		.introduce{
+				    	font-size:14px;
+
+		}
+		.article {
+			margin:2em 0 3em 0;
+		}
+		article .hd{
+			font-size:24px;
+			margin-bottom:12px;
+		}
+		article .bd{
+			color:#666;
+			transition:color .5s;
+		}
+		article .bd:hover{
+			color:black;
+		}
+		.leftContent{
+			float:left;
+			width:66.6%;
+			line-height:1.8em;
+		}
+		.articleImgContent{
+			float:left;
+			width:33%;
+			box-sizing:border-box;
+			--webkit-box-sizing: border-box;
+			height:150px;
+			padding-left: 3em;
+
+
+		}
+		.articleImg{
+			width:100%;
+			height:100%;
+			background-image: url(imgs/01.jpg);
+			background-size:cover;
+			border-radius:8px;
+			box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.4), 0px 1px 10px 2px rgba(0, 0, 0, 0.2);
+		}
+		.tags{
+			font-size:12px;
+			color:#888;
+			padding-top:12px;
+		}
+
+
+		@media screen and (max-width: 900px) {
+	   	.header{
+	        position:relative;
+	        width:100%;
+	        height:200px;
+	        -webkit-background-size: cover;
+	        background-size: cover;
+	    }
+	    .photo{
+	    	margin:10px auto 10px auto;
+	    	width:64px;
+	    	height:64px;
+	    	border-radius:64px;
+	    }
+	    .leftRow{
+	    	display:none;
+	    }
+	    .main{
+	    	width:100%;
+	    	margin-left:0;
+	    	max-width:100%;
+	    }
+
+}
+@media screen and (max-width: 700px) {
+	.leftContent{
+		float:none;
+	}
+	.main{
+		width:100%;
+		padding:3em;
+	}
+	.leftContent{
+	width:100%;
+		margin-bottom:2em;
+
+	}
+	.articleImgContent{
+		width:100%;
+		padding-left: 0;
+		margin-bottom:2em;
+
+	}
+
+}
+
+	</style>
+</head>
+<script type="text/javascript">
+
+</script>
+<body>
+	<header class="header shadow">
+		<div class="head">
+			<div class="photoContent">
+				<img class="photo" src="imgs/01.jpg">
+			</div>
+			<div class="center">
+				<h1 class="name" id="id1">Hoshine的博客</h1>
+				<h2 class="englishName">Hoshine's blog</h2>
+			</div>
+			<div>
+				<ul class="incoList">
+					<li>
+						<a href="huangcan5421.github.io/blog/index.html">
+							<i class="iconfont">&#xe602;</i>
+						</a>
+					</li>
+					<li>
+						<a href="huangcan5421.github.io/blog/message.html">
+							<i class="iconfont">&#xe600;</i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="iconfont">&#xe604;</i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="iconfont">&#xe606;</i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="iconfont">&#xe605;</i>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="leftRow">
+				<p class="introduce">随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍随便来点介绍</p>
+			</div>
+			<div class="leftRow center">
+				<a href="#" class="button shadow">
+				<i class="iconfont">&#xe602; </i>预留按钮</a>
+			</div>
+		</div>
+	</header>
+	<div class="main">
+<!--  start -->
+	<div class="ds-thread" data-thread-key="duoshuoTest" data-title="lazyLoad+imgbox+arttemplate+duoshuo" data-url="https://huangcan5421.github.io/webfront/01/"></div>
+<!--  end -->
+	</div>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/arttemplate.js"></script>
+	<script type="text/javascript">
+var duoshuoQuery = {short_name:"hoshine"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<script type="text/javascript">
+
+	$(window).scroll(function (argument) {
+		var h2=document.body.scrollTop
+		var h=document.body.scrollHeight 
+		var positionY=h2/h*500
+		$('.header').css('background-position-y',-positionY)
+	})
+</script>
+</html>
