@@ -15,7 +15,8 @@
 
 </script>
 <body>
-<audio class="audio" src="imgs/fade.mp3" autoplay="autoplay" loop="loop">
+<audio class="audio"  autoplay="autoplay" loop="loop">
+<source src="imgs/fade.mp3" type="audio/mpeg" />
 Your browser does not support the audio tag.
 </audio>
 
@@ -50,7 +51,7 @@ Your browser does not support the audio tag.
 							<i class="iconfont">&#xe606;</i>
 						</a>
 					</li>
-					<li>
+					<li class="fullScreen">
 						<a href="#">
 							<i class="iconfont">&#xe605;</i>
 						</a>
@@ -133,20 +134,44 @@ Your browser does not support the audio tag.
 
 musicFnc()
 	function musicFnc(argument) {
-		var musicUrl='imgs/fade.mp3';
 		var musicBtn=$('.musicBtn');
-		var music=$('.audio')
-		var musicFlag=0;
+		var music=$('.audio').get(0);
+		music.volume=.6
 		musicBtn.on('click',function (argument) {
-			musicFlag=!musicFlag
-			if(musicFlag){
-				music.attr('src','')
+			if(music.paused){
+				music.play()
 			}
 			else{
-				music.attr('src',musicUrl)
-
+				music.pause(); //暂停
 			}
 		})
 	}
+/**
+ * 全屏方法
+ */
+$('.fullScreen').on("click",function(){
+	
+		if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+			if (document.documentElement.requestFullscreen){
+				document.documentElement.requestFullscreen();
+			} else if (document.documentElement.msRequestFullscreen){
+				document.documentElement.msRequestFullscreen();
+			} else if (document.documentElement.mozRequestFullScreen){
+				document.documentElement.mozRequestFullScreen();
+			} else if (document.documentElement.webkitRequestFullscreen){
+				document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+			}
+		} else {
+			if (document.exitFullscreen){
+				document.exitFullscreen();
+			} else if (document.msExitFullscreen){
+				document.msExitFullscreen();
+			} else if (document.mozCancelFullScreen){
+				document.mozCancelFullScreen();
+			} else if (document.webkitExitFullscreen){
+				document.webkitExitFullscreen();
+			}
+		}
+	})
 </script>
 </html>
