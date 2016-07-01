@@ -15,7 +15,7 @@
 
 </script>
 <body>
-<audio src="imgs/fade.mp3" autoplay="autoplay" loop="loop">
+<audio class="audio" src="imgs/fade.mp3" autoplay="autoplay" loop="loop">
 Your browser does not support the audio tag.
 </audio>
 
@@ -45,7 +45,7 @@ Your browser does not support the audio tag.
 							<i class="iconfont">&#xe604;</i>
 						</a>
 					</li>
-					<li>
+					<li class="musicBtn">
 						<a href="#">
 							<i class="iconfont">&#xe606;</i>
 						</a>
@@ -125,10 +125,28 @@ Your browser does not support the audio tag.
 	 var html = template('template', data);
     $('.main').append(html);
 	$(window).scroll(function (argument) {
-		var h2=document.body.scrollTop
-		var h=document.body.scrollHeight 
-		var positionY=h2/h*500
-		$('.header').css('background-position-y',-positionY)
+		var h2=document.body.scrollTop;
+		var h=document.body.scrollHeight ;
+		var positionY=h2/h*500;
+		$('.header').css('background-position-y',-positionY);
 	})
+
+musicFnc()
+	function musicFnc(argument) {
+		var musicUrl='imgs/fade.mp3';
+		var musicBtn=$('.musicBtn');
+		var music=$('.audio')
+		var musicFlag=0;
+		musicBtn.on('click',function (argument) {
+			musicFlag=!musicFlag
+			if(musicFlag){
+				music.attr('src','')
+			}
+			else{
+				music.attr('src',musicUrl)
+
+			}
+		})
+	}
 </script>
 </html>
