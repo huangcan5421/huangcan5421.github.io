@@ -31,32 +31,31 @@ Your browser does not support the audio tag.
 			</div>
 			<div>
 				<ul class="incoList">
-					<li>
+					<li data-txt="返回首页">
 						<a href="https://huangcan5421.github.io/blog/index.html">
 							<i class="iconfont">&#xe602;</i>
 						</a>
 					</li>
-					<li>
+					<li data-txt="查看评论">
 						<a href="https://huangcan5421.github.io/blog/message.html">
 							<i class="iconfont">&#xe600;</i>
 						</a>
 					</li>
-					<li>
-						<a href="#">
+					<li data-txt="github主页">
+						<a href="https://huangcan5421.github.io">
 							<i class="iconfont">&#xe604;</i>
 						</a>
 					</li>
-					<li class="musicBtn">
+					<li data-txt="音乐开关" class="musicBtn">
 						<a href="#">
 							<i class="iconfont">&#xe606;</i>
 						</a>
 					</li>
-					<li class="fullScreen">
+					<li data-txt="全屏开关" class="fullScreen">
 						<a href="#">
 							<i class="iconfont">&#xe605;</i>
 						</a>
 					</li>
-
 				</ul>
 			</div>
 			<div class="leftRow">
@@ -132,6 +131,9 @@ Your browser does not support the audio tag.
 		$('.header').css('background-position-y',-positionY);
 	})
 
+	$('.fullScreen').on("click",function(){
+			fullScreen()
+		})
 musicFnc()
 	function musicFnc(argument) {
 		var musicBtn=$('.musicBtn');
@@ -146,12 +148,11 @@ musicFnc()
 			}
 		})
 	}
-/**
- * 全屏方法
- */
-$('.fullScreen').on("click",function(){
-	
-		if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+
+
+
+function fullScreen(){
+	if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
 			if (document.documentElement.requestFullscreen){
 				document.documentElement.requestFullscreen();
 			} else if (document.documentElement.msRequestFullscreen){
@@ -172,6 +173,6 @@ $('.fullScreen').on("click",function(){
 				document.webkitExitFullscreen();
 			}
 		}
-	})
+}
 </script>
 </html>
