@@ -10,7 +10,7 @@
 }
 
 .header * {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .main {
@@ -96,6 +96,9 @@
     transition: all 0.3s;
     opacity: 0;
 }
+.incoList li:hover{
+	background-color: rgba(255, 255, 255, 0.2);
+}
 
 .incoList li:hover:after {
     color: white;
@@ -104,7 +107,7 @@
 }
 
 .leftRow {
-    padding: 4em 4em 1em 4em;
+    padding: 5em 4em 1em 4em;
 }
 
 .button {
@@ -187,6 +190,9 @@ article .bd:hover {
         width: 100%;
         margin-left: 0;
         max-width: 100%;
+    }
+    .incoList{
+    	margin-top: 12px
     }
 }
 
