@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ihoshie</title>
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<style type="text/css">
+		html{
+			background-image: url('bg.jpg')
+		}
+		*{
+			word-break: break-all;
+		}
+		.banner{
+			 background-image: url('pro5.jpg');
+			 height: 420px;
+			 -webkit-background-size: cover;
+			 background-size: cover;
+			 background-repeat: no-repeat;
+			 background-position: center;
+		}
+		.photo{
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			background-image: url('myPhoto.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			box-shadow: 0px 0px 20px ;
+			margin: -24px auto 12px auto;
+		}
+		.card{
+			background:rgba(255,255,255,0.8);
+			box-sizing: border-box;
+			padding: 64px 24px;
+			border: 1px solid #eee;
+			border-radius:12px;
+			box-shadow: 0px 0px 20px;
+			line-height: 28px;
+			margin: 64px 0;
+		}
+		.myCard{
+				margin-top: -208px;
+				padding: 56px 24px;
+		}
+		.myBlog{
+			 margin-top: 24px;
+		}
+		.MyblogForA{
+			text-decoration: none;
+			color: blue;
+			padding-left: 4px;
+		}
+
+		.project{
+			margin-top: 40px;
+			
+
+		}
+		.fengexian{
+			height: 1px;
+			background-image:-webkit-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,.1),rgba(0,0,0,0));
+			margin: 24px auto;
+		}
+		.myH2{
+			font-size: 32px;
+			font-weight: normal;
+		}
+		.projectList{
+			list-style: none;
+			width: 640px;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.projectList li{
+			width: 170px;
+			height: 210px;
+			float: left;
+			margin:0 16px;
+			border: 1px solid #aaa ;
+			border-radius: 4px;
+     filter: blur(1px) grayscale(.5) opacity(0.8)  ;
+     transition: all 0.3s;
+     margin-top: 32px;
+     position: relative
+		}
+
+
+		.projectList li:hover{
+			filter:blur(0) grayscale(0) opacity(1);
+			box-shadow: 0 0 24px gray;
+			margin-top: 16px;
+			border: 1px solid #00699e;
+
+		}
+		.projectImg{
+			width: 98%;
+			margin: 2px 1% 2px 1%;
+			height: 108px;
+			border-radius: 6px;
+		}
+		.Describe{
+			overflow : hidden;
+			text-overflow: ellipsis;
+			margin: 0 3%;
+			line-height: 24px;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+@media screen and (max-width: 900px) {
+    .row{
+      width: 90%;
+    }
+   .projectList li{
+			float: none;
+			margin:0 auto;
+			border: 1px solid #aaa ;
+			border-radius: 4px;
+     filter: blur(0px) grayscale(0) opacity(0.8)  ;
+     transition: all 0.3s;
+     margin-top: 32px;
+     position: relative
+		}
+		.projectList{
+			width: 100%;
+		}
+}
+
+
+	</style>
+</head>
+<body>
+	
+	<div class="banner">我是banner</div>
+	<div class="main">
+		<div class="row">
+				<div class="card myCard">
+					<a href=""><div class="photo"></div></a>
+					<p class="center">我爱编程，也爱设计；我爱奋斗，也享受生活；我爱最新的手机，更爱高性能电脑；<br> 我擅长技术，崇尚简单的快乐和幸福； 我没什么特别，我很特别； <br>我不是什么工程师，我是程序员。我和别人不一样，我和你一样，为理想而奋斗。
+					</p>
+
+					<p class="myBlog center">这是我的个人网站:<a class="MyblogForA" href="/blog">我的博客</a>  </p>
+				</div>
+
+
+				<div class="project card">
+					<h2 class="center myH2">我的作品</h2>
+					<div class="fengexian"></div>
+					<div class="myProject">
+						<ul class="projectList clear">
+							<li>
+								<a href="http://www.zx017.com/"></a><img class="projectImg" src="pro1.jpg">	
+								<p class="Describe center">中富金石官方，非开源项目仅供浏览</p>
+							</li>
+							<li>
+								<a href="/blog"><img class="projectImg" src="pro2.jpg"></a>
+								<p class="Describe center">我的个人博客，源文件关注我的github即可获得</p>
+							</li>
+						<li>
+								<a href="https://huangcan5421.github.io/"><img class="projectImg" src="pro4.jpg"></a>	
+								<p class="Describe center">基于nodejs Hexo开发的另一个博客 挂在github的服务器上：></p>
+							</li>
+						</ul>
+					<ul class="projectList clear">
+						<li>
+								<a href="/01"><img class="projectImg" src="pro3.jpg"></a>
+								<p class="Describe center">imgLazyLoad+arttemplate+imgbox+duoshuo</p>
+							</li>
+							
+							<li>
+								<a href="/02"><img class="projectImg" src="pro5.jpg"></a>
+								<p class="Describe center">简单好看通用弹窗提示组件 自己封装没有那么多依赖</p>
+							</li>
+							<li>
+								<a href="/01"><img class="projectImg" src="pro6.jpg"></a>
+								<p class="Describe center">每获，非开源项目仅供浏览。离开每获有段时间了 版本早已更新 仅部分存留</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+</body>
+</html>
