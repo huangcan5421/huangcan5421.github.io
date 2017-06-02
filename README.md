@@ -12,7 +12,11 @@
 > 
 > huangcan5421.github.io/blog/index.html
 
-
+以上内容均不再维护。
+欢迎大家访问(有自己服务器啦~)
+> 新网站 http://www.ihoshine.cn/
+> 
+> 博客 http://www.ihoshine.cn/blog
 
 
 ##  附上曾经写的项目吧（非开源仅供浏览） ##
