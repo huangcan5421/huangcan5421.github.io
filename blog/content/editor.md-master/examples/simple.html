@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>Simple - Editor.md</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../css/editormd.css" />
+        <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+        <style>
+        .btn{margin-top: 12px}
+        </style>
+    </head>
+    <body>
+        <div id="layout">
+            <header>
+                <h1>New Article</h1>
+                <input type="text" maxlength="22" class="title" placeholder="title"  name="">
+                <input type="text" maxlength="22" class="psd" placeholder="psd"  name="">
+                <div class="btn">提交</div>
+            </header>
+            <div id="test-editormd">
+                <textarea class="content" style="display:none;">[TOC]
+
+#### Disabled options
+
+- TeX (Based on KaTeX);
+- Emoji;
+- Task lists;
+- HTML tags decode;
+- Flowchart and Sequence Diagram;
+
+#### Editor.md directory
+
+    editor.md/
+            lib/
+            css/
+            scss/
+            tests/
+            fonts/
+            images/
+            plugins/
+            examples/
+            languages/     
+            editormd.js
+            ...
+
+```html
+&lt;!-- English --&gt;
+&lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
+
+&lt;!-- 繁體中文 --&gt;
+&lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
+```
+</textarea>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="../editormd.min.js"></script>
+        <script type="text/javascript">
+			var testEditor;
+
+            $(function() {
+                testEditor = editormd("test-editormd", {
+                    width   : "90%",
+                    height  : 640,
+                    syncScrolling : "single",
+                    path    : "../lib/"
+                });
+                
+                /*
+                // or
+                testEditor = editormd({
+                    id      : "test-editormd",
+                    width   : "90%",
+                    height  : 640,
+                    path    : "../lib/"
+                });
+                */
+            });
+            $('.btn').on('click',function(){
+                add()
+            })
+            function add(){
+                var content =testEditor.getMarkdown()
+                var title =$('.title').val()
+                var psd =$('.psd').val()
+                var param={title:title,
+                    title:title,
+                    psd:psd,
+                    content:content}
+             $.ajax({
+                url: '/blog/add',
+                type: 'post',
+                data: param,
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                dataType: 'json',
+                error: function(e) {
+                    console.log('服务器错误，请稍后再试');
+                },
+                success: function(res) {
+                    alert('successed')
+                }
+            });
+        }
+
+        </script>
+    </body>
+</html>

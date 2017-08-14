@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>wx2</title>
+获取信息
+	<style type="text/css">
+
+	</style>
+</head>
+<script type="text/javascript">
+
+</script>
+<body>
+<p class="note" style="word-break: break-all;"></p>
+	<script src="js/jquery.1.9.1.min.js"></script>
+	<script type="text/javascript">
+function GetQueryString(name) { 
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+	var r = window.location.search.substr(1).match(reg); 
+	if (r != null) return unescape(r[2]); return null; 
+	} 
+
+var code=GetQueryString("code")
+
+// $('.iframe').attr('src','https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxb7b360d8edf29bc1&secret=36f12d9eb90b422713ab7b4f4d08c6d5&code='+code+'&grant_type=authorization_code').css('width','100%')
+ $.ajax({
+            url: '../wx?code='+code,
+            type: 'get',
+            contentType: 'application/json',
+            dataType: 'json',
+            error: function(data) {
+        			alert('error:'+data)
+            },
+            success: function (res) {
+
+               // alert(JSON.stringify(res))
+               $('.note').html(JSON.stringify(res))
+            }
+        });
+    
+
+	</script>
+
+</body>
+
+
+
+</html>

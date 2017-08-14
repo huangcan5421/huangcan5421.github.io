@@ -122,6 +122,7 @@
 
 .article {
     margin: 2em 0 3em 0;
+    cursor: pointer;
 }
 
 article .hd {
@@ -142,6 +143,8 @@ article .bd:hover {
     float: left;
     width: 66.6%;
     line-height: 1.8em;
+    max-height: 200px;
+    overflow: hidden;
 }
 
 .articleImgContent {
@@ -166,6 +169,10 @@ article .bd:hover {
     font-size: 12px;
     color: #888;
     padding-top: 12px;
+}
+.pre,.next{
+    display: inline-block;
+    border: 1px solid rgba(72, 69, 69, 0.6);
 }
 
 @media screen and (max-width: 900px) {
@@ -201,7 +208,7 @@ article .bd:hover {
     }
     .main {
         width: 100%;
-        padding: 3em;
+        padding: 1em;
     }
     .leftContent {
         width: 100%;
