@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+    <meta name="Keywords" content="ihoshine、hoshine、前端、技术、前端技术、个人网页" />
+    <meta name="description" content="前端技术的展示" />
+	<title>alert</title>
+	<style type="text/css">
+
+	html{
+		font-size:50px;
+		background:url('http://att.bbs.duowan.com/forum/201601/19/100650itj7s57i1bj97qv1.jpg');
+		-webkit-background-size: cover;
+		background-size: cover;
+        font-family: "open sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	}
+
+	.alert{
+        /* border:1px solid gray; */
+        box-shadow:0px 0px 2px 1px;
+        border-top: none;
+        overflow: hidden;
+        width:5rem;
+        position:fixed;
+        top:30%;
+        left:50%;
+        margin-left:-2.5rem;
+        background-color:white;
+        display:block;
+        text-align:center;
+        box-sizing:border-box;
+        display:none;
+        border-radius:6px;
+        font-size:14px;
+        z-index: 9;
+    }
+    .alert_title{
+        text-align: center;
+        font-size: 16px;
+        color: white;
+        background-color: #dc2317;
+        border-bottom: 3px solid #bf040c;
+        height: 46px;
+        line-height: 48px;
+    }
+    .msg{
+          -webkit-box-sizing:border-box;
+        padding:24px;
+    }
+    .esc{
+        width:80px;
+        height:36px;
+        background-color:#dc2317;
+        color:white;
+        cursor:pointer;
+        border-radius:4px;
+        margin-bottom: .24rem;
+        border: 1px solid #bf040c;
+        outline: none;
+    }
+    .esc:active{
+        background-color:#ff8000;
+        color:black;
+    }
+  .zhegai{
+    position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);
+    z-index:8;display:none;
+  }
+	</style>
+</head>
+<body>
+	<div class="zhegai"></div>
+
+    <div class="alert">
+        <div class="alert_title">提 示</div>
+        <div class="msg"><p></p></div>
+        <button type="button" class="esc">确认</button>
+    </div>
+<script src="https://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+  	
+  	myAlert('对不起你的用户名不能为空')
+
+	  //点击确定 隐藏弹出框
+        $(".close,.esc").on('click',function(){
+            cancel(this)
+        })
+    function cancel(t) {
+        $(t).parent().css("display", "none");
+        $('.zhegai').css("display", "none");
+    }
+
+    function myAlert(str){
+    	var temp=str
+                $('.msg>p').html('').prepend(temp);
+                $('.alert,.zhegai').show();
+    }
+
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9bcc627b7f2662998ec20c0051e690f9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
